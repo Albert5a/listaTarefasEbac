@@ -7,10 +7,6 @@ $(document).ready(function() {
         $('form').slideUp();
     })
 
-    $('ul li h3').click(function() {
-            $('ul li h3').css('text-decoration', 'line-through');
-        })
-
     $('form').on('submit', function(e) {
         e.preventDefault();
         const tarefaNova = $('#tarefa-nova').val();
@@ -18,10 +14,10 @@ $(document).ready(function() {
         $(`<h3>${tarefaNova}</h3>`).appendTo(novoItem);
         $(novoItem).appendTo('ul');
         $(novoItem).fadeIn(1000);
-        $('#nova-tarefa').val('');
+        $('#tarefa-nova').val('');
 
-    $('ul li h3').click(function() {
-        $(novoItem).css('text-decoration', 'line-through');
-    })
+        $(novoItem).click(function() {
+            $(novoItem).css('text-decoration', 'line-through');
+        })
     })
 });
