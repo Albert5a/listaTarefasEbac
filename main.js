@@ -7,12 +7,9 @@ $(document).ready(function() {
         $('form').slideUp();
     })
 
-    $('ul li h3').click( function() {
-        const tarefaClicada = ('h3').val();
-        const transformaItem = $('<li></li>');
-        $(`<h3 style="text-decoration: line-through">${tarefaClicada}</h3>`).appendTo(transformaItem);
-        $(transformaItem).appendTo('ul');
-    })
+    $('ul li h3').click(function() {
+            $('ul li h3').css('text-decoration', 'line-through');
+        })
 
     $('form').on('submit', function(e) {
         e.preventDefault();
@@ -22,5 +19,9 @@ $(document).ready(function() {
         $(novoItem).appendTo('ul');
         $(novoItem).fadeIn(1000);
         $('#nova-tarefa').val('');
+
+    $('ul li h3').click(function() {
+        $(novoItem).css('text-decoration', 'line-through');
     })
-})
+    })
+});
